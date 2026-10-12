@@ -1,0 +1,1 @@
+// Notification Mongoose model placeholder.

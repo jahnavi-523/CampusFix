@@ -1,0 +1,103 @@
+/* CAMPUSFIX STATISTICS CARDS */
+
+.campus-stat-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e0e6da;
+  border-radius: 16px;
+  background: #fffefa;
+  box-shadow: 0 5px 20px rgba(32, 57, 43, 0.055);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.campus-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #c8d9c5;
+  box-shadow: 0 10px 25px rgba(32, 57, 43, 0.09);
+}
+
+.campus-stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.campus-stat-title {
+  color: #667768;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.campus-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border: 1px solid #dce8d7;
+  border-radius: 12px;
+  background: #e9f2e4;
+  color: #326a43;
+}
+
+.campus-stat-value {
+  margin-top: 17px;
+  color: #20392b;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.campus-stat-description {
+  margin: 8px 0 0;
+  color: #778578;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Pending */
+
+.campus-stat-card--amber .campus-stat-icon {
+  border-color: #f0dfbd;
+  background: #fff0d6;
+  color: #9b6416;
+}
+
+/* In Progress */
+
+.campus-stat-card--blue .campus-stat-icon {
+  border-color: #d9e2ff;
+  background: #e7edff;
+  color: #4566ad;
+}
+
+/* Resolved */
+
+.campus-stat-card--sage .campus-stat-icon {
+  border-color: #d0e7d2;
+  background: #e0f2e2;
+  color: #2d7140;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 640px) {
+  .campus-stat-card {
+    padding: 16px;
+  }
+
+  .campus-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .campus-stat-value {
+    font-size: 27px;
+  }
+}

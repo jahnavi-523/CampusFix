@@ -1,0 +1,547 @@
+/* =========================================
+   CAMPUSFIX — STUDENT DASHBOARD
+   Premium Forest Green + Warm Cream
+========================================= */
+
+.student-dashboard {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 0 30px;
+  color: #20392b;
+  font-family: inherit;
+}
+
+/* WELCOME SECTION */
+
+.student-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.student-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #4f7957;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.student-welcome h1 {
+  margin: 0;
+  color: #20392b;
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 750;
+  letter-spacing: -1.2px;
+  line-height: 1.25;
+}
+
+.student-welcome h1 span {
+  color: #4c8057;
+}
+
+.student-welcome p {
+  margin: 10px 0 0;
+  color: #6f7f70;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* PRIMARY BUTTON */
+
+.student-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex-shrink: 0;
+  padding: 13px 19px;
+  border: 1px solid #245c43;
+  border-radius: 11px;
+  background: #245c43;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(36, 92, 67, 0.15);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-primary-button:hover {
+  background: #194832;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(36, 92, 67, 0.2);
+}
+
+/* STATISTICS GRID */
+
+.student-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 38px;
+}
+
+/* SECTION HEADINGS */
+
+.student-dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 19px;
+}
+
+.student-dashboard-heading h2 {
+  margin: 0;
+  color: #20392b;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.student-dashboard-heading p {
+  margin: 7px 0 0;
+  color: #748174;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.student-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #326744;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.student-text-link:hover {
+  color: #194832;
+}
+
+/* COMPLAINTS PANEL */
+
+.student-complaints-panel {
+  overflow: hidden;
+  border: 1px solid #e0e6da;
+  border-radius: 16px;
+  background: #fffefa;
+  box-shadow: 0 5px 22px rgba(32, 57, 43, 0.045);
+}
+
+.student-complaints-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 21px;
+  border-bottom: 1px solid #e9ede4;
+  background: #fffefa;
+}
+
+.student-filter-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.student-filter {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #68776a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-filter:hover {
+  background: #edf3e9;
+  color: #28563a;
+}
+
+.student-filter.is-active {
+  border-color: #d3e3cf;
+  background: #e4efdf;
+  color: #245c38;
+}
+
+.student-complaint-count {
+  color: #7b887a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* COMPLAINT LIST */
+
+.student-complaint-list {
+  padding: 0 21px;
+}
+
+.student-complaint-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 0;
+  border-bottom: 1px solid #e9ede5;
+  transition: background 0.2s ease;
+}
+
+.student-complaint-item:last-child {
+  border-bottom: none;
+}
+
+.student-complaint-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: 1px solid #dce8d7;
+  border-radius: 12px;
+  background: #edf4e9;
+  color: #416f4b;
+}
+
+.student-complaint-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-complaint-id {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #718672;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.student-complaint-info h3 {
+  overflow: hidden;
+  margin: 0;
+  color: #263d2d;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+}
+
+.student-complaint-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 8px;
+}
+
+.student-complaint-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #778577;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.student-complaint-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.student-complaint-category {
+  color: #778577;
+  font-size: 11px;
+}
+
+/* STATUS BADGES */
+
+.student-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.student-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.student-status--pending {
+  background: #fff0d6;
+  color: #925b08;
+}
+
+.student-status--in-progress {
+  background: #e7edff;
+  color: #385ca5;
+}
+
+.student-status--resolved {
+  background: #e0f2e2;
+  color: #286b3b;
+}
+
+/* EMPTY STATE */
+
+.student-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 20px;
+  color: #64836a;
+  text-align: center;
+}
+
+.student-empty-state h3 {
+  margin: 14px 0 5px;
+  color: #294733;
+  font-size: 15px;
+}
+
+.student-empty-state p {
+  margin: 0;
+  color: #748174;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* BOTTOM CALL TO ACTION */
+
+.student-help-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 22px 24px;
+  border: 1px solid #d5e3cf;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #e7f0e1, #f4f5e9);
+}
+
+.student-help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #d4e7ce;
+  color: #2d6840;
+}
+
+.student-help-banner > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-help-banner h3 {
+  margin: 0;
+  color: #254b31;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.student-help-banner p {
+  margin: 6px 0 0;
+  color: #687d6b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.student-help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  color: #285d38;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.student-help-link:hover {
+  color: #194832;
+}
+
+.student-dashboard-footer {
+  margin: 22px 0 0;
+  color: #7c8b7b;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.25px;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .student-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .student-welcome h1 {
+    font-size: 28px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .student-dashboard {
+    padding-top: 4px;
+  }
+
+  .student-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 19px;
+    margin-bottom: 25px;
+  }
+
+  .student-welcome h1 {
+    font-size: 26px;
+  }
+
+  .student-welcome p {
+    font-size: 13px;
+  }
+
+  .student-primary-button {
+    width: 100%;
+    padding: 13px 16px;
+  }
+
+  .student-stats-grid {
+    gap: 11px;
+    margin-bottom: 29px;
+  }
+
+  .student-dashboard-heading {
+    align-items: flex-start;
+  }
+
+  .student-dashboard-heading h2 {
+    font-size: 17px;
+  }
+
+  .student-dashboard-heading p {
+    font-size: 12px;
+  }
+
+  .student-complaints-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .student-filter-list {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .student-filter {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .student-complaint-list {
+    padding: 0 15px;
+  }
+
+  .student-complaint-item {
+    align-items: flex-start;
+    gap: 11px;
+    padding: 17px 0;
+  }
+
+  .student-complaint-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .student-complaint-info h3 {
+    font-size: 13px;
+    white-space: normal;
+  }
+
+  .student-complaint-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .student-complaint-right {
+    align-items: flex-end;
+  }
+
+  .student-status {
+    padding: 6px 7px;
+    font-size: 10px;
+  }
+
+  .student-complaint-category {
+    font-size: 10px;
+  }
+
+  .student-help-banner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 17px;
+  }
+
+  .student-help-banner > div:nth-child(2) {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .student-help-link {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .student-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-complaint-item {
+    flex-wrap: wrap;
+  }
+
+  .student-complaint-right {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 49px;
+  }
+}

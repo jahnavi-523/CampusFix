@@ -1,0 +1,25 @@
+.campus-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f2e9;
+  color: #20392b;
+}
+
+.campus-layout-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+.campus-layout-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 34px;
+}
+
+@media (max-width: 768px) {
+  .campus-layout-content {
+    padding: 22px 17px;
+  }
+}

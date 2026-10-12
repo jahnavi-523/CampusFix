@@ -1,0 +1,964 @@
+/* ========================================
+  CampusFix LOGIN PAGE
+   Forest Green + Cream Glassmorphism
+======================================== */
+
+.fmc-login-page {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #f8f7ef;
+
+  background-image:
+    linear-gradient(
+      115deg,
+      rgba(12, 43, 32, 0.72),
+      rgba(20, 54, 39, 0.48),
+      rgba(12, 36, 29, 0.66)
+    ),
+    var(--campus-image);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: inherit;
+}
+
+.fmc-login-page *,
+.fmc-login-page *::before,
+.fmc-login-page *::after {
+  box-sizing: border-box;
+}
+
+/* Background overlay */
+
+.fmc-login-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(204, 221, 183, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(11, 37, 28, 0.01),
+      rgba(11, 37, 28, 0.15)
+    );
+
+  pointer-events: none;
+}
+
+/* ========================================
+   NAVBAR - LIGHT GLASS EFFECT
+======================================== */
+
+.fmc-login-navbar {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 84px;
+  padding: 16px 6.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* Lighter transparent navbar */
+  background: rgba(239, 242, 228, 0.14);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.fmc-login-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #fffdf5;
+
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+
+.fmc-login-logo > span:last-child > span {
+  color: #dce7c6;
+}
+
+.fmc-logo-icon {
+  width: 37px;
+  height: 37px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+  background: #dce7c6;
+  color: #183e2d;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.fmc-login-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.fmc-login-nav a {
+  color: rgba(255, 255, 255, 0.94);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.fmc-login-nav a:hover {
+  color: #dce7c6;
+}
+
+.fmc-nav-login {
+  padding: 11px 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: #fffdf5;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 650;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fmc-nav-login:hover {
+  background: #e3ebd4;
+  color: #183e2d;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+.fmc-login-content {
+  flex: 1;
+
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 24px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  align-items: center;
+  gap: 50px;
+}
+
+
+/* Left introduction */
+
+.fmc-login-intro {
+  max-width: 510px;
+  animation: fmcIntroEnter 850ms ease both;
+}
+
+.fmc-login-eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 9px 13px;
+
+  border: 1px solid rgba(224, 237, 207, 0.4);
+  border-radius: 100px;
+
+  background: rgba(232, 240, 218, 0.12);
+  color: #e0eacb;
+
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.fmc-login-intro h1 {
+  margin: 0;
+
+  color: #fffdf5;
+
+  font-size: clamp(37px, 4.2vw, 58px);
+  font-weight: 750;
+  letter-spacing: -2.2px;
+  line-height: 1.12;
+}
+
+.fmc-login-intro h1 span {
+  color: #d2e0b6;
+}
+
+.fmc-login-intro p {
+  max-width: 410px;
+  margin-top: 22px;
+
+  color: rgba(255, 253, 245, 0.9);
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   GLASS LOGIN CARD
+======================================== */
+
+.fmc-glass-card {
+  position: relative;
+  width: 100%;
+ padding: 10px 10px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 23px;
+
+  background: rgba(239, 242, 228, 0.19);
+
+  box-shadow:
+    0 25px 65px rgba(4, 23, 16, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  color: #fffdf5;
+
+  animation: fmcCardEnter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fmc-card-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.fmc-card-close button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+
+  background: rgba(16, 51, 37, 0.55);
+  color: #fffdf5;
+
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fmc-card-close button:hover {
+  background: #dce7c6;
+  color: #183e2d;
+  transform: rotate(90deg);
+}
+
+.fmc-card-heading {
+  margin-bottom: 29px;
+  text-align: center;
+}
+
+.fmc-card-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: #e1ebcc;
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.fmc-card-heading h2 {
+  margin: 0;
+
+  color: #fffdf5;
+
+  font-size: 32px;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+.fmc-card-heading p {
+  margin: 10px 0 0;
+
+  color: rgba(255, 253, 245, 0.86);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   INPUT FIELDS
+======================================== */
+
+.fmc-input-group {
+  margin-bottom: 21px;
+}
+
+.fmc-input-group > label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #fffdf5;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fmc-input-wrapper {
+  min-height: 49px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.13);
+  color: #f1f4e7;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fmc-input-wrapper:focus-within {
+  border-color: #dce7c6;
+
+  background: rgba(255, 255, 255, 0.19);
+
+  box-shadow: 0 0 0 3px rgba(220, 231, 198, 0.12);
+}
+
+.fmc-input-wrapper > svg {
+  flex-shrink: 0;
+}
+
+.fmc-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #fffdf5;
+
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.fmc-input-wrapper input::placeholder {
+  color: rgba(255, 253, 245, 0.72);
+}
+
+.fmc-password-toggle {
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 3px;
+  border: none;
+
+  background: transparent;
+  color: #f1f4e7;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   REMEMBER ME + FORGOT PASSWORD
+======================================== */
+
+.fmc-login-options {
+  margin: 2px 0 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fmc-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 253, 245, 0.92);
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.fmc-remember input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+
+  accent-color: #dce7c6;
+  cursor: pointer;
+}
+
+.fmc-forgot-link {
+  padding: 0;
+  border: none;
+
+  background: transparent;
+  color: #e5edcf;
+
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.fmc-forgot-link:hover,
+.fmc-register-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   LOGIN BUTTON
+======================================== */
+
+.fmc-submit-button {
+  width: 100%;
+  min-height: 49px;
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #dce7c6;
+  border-radius: 10px;
+
+  background: #dce7c6;
+  color: #183e2d;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.fmc-submit-button:hover {
+  background: #edf2e2;
+
+  box-shadow: 0 8px 22px rgba(4, 23, 16, 0.17);
+
+  transform: translateY(-2px);
+}
+
+.fmc-submit-button svg {
+  transition: transform 0.25s ease;
+}
+
+.fmc-submit-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   REGISTER LINK + CARD FOOTER
+======================================== */
+
+.fmc-register-prompt {
+  margin-top: 24px;
+
+  color: rgba(255, 253, 245, 0.9);
+
+  text-align: center;
+  font-size: 12px;
+}
+
+.fmc-register-prompt a {
+  color: #e1ebcc;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.fmc-card-footer {
+  margin-top: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: rgba(255, 253, 245, 0.7);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.fmc-footer-line {
+  width: 25px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ========================================
+   BOTTOM FOOTER
+======================================== */
+
+.fmc-login-footer {
+  width: 100%;
+  min-height: 55px;
+  padding: 15px 6.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: rgba(239, 242, 228, 0.08);
+
+  color: rgba(255, 253, 245, 0.85);
+  font-size: 11px;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes fmcCardEnter {
+  from {
+    opacity: 0;
+    transform: translateX(45px) translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes fmcIntroEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .fmc-login-content {
+    grid-template-columns: 1fr 390px;
+    gap: 30px;
+  }
+
+  .fmc-login-nav {
+    gap: 18px;
+  }
+
+  .fmc-login-intro h1 {
+    font-size: 39px;
+  }
+
+  .fmc-glass-card {
+    padding: 36px 25px 24px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+  .fmc-login-navbar {
+    min-height: 70px;
+    padding: 14px 5%;
+  }
+
+  .fmc-login-logo {
+    font-size: 18px;
+  }
+
+  .fmc-logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 19px;
+  }
+
+  .fmc-login-nav {
+    display: none;
+  }
+
+  .fmc-nav-login {
+    padding: 9px 18px;
+  }
+
+  .fmc-login-content {
+    width: min(430px, 90%);
+
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    padding: 40px 0;
+  }
+
+  .fmc-login-intro {
+    text-align: center;
+  }
+
+  .fmc-login-eyebrow {
+    margin-bottom: 15px;
+  }
+
+  .fmc-login-intro h1 {
+    font-size: clamp(34px, 8vw, 43px);
+    letter-spacing: -1.5px;
+  }
+
+  .fmc-login-intro p {
+    margin: 14px auto 0;
+
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .fmc-glass-card {
+    padding: 36px 24px 23px;
+  }
+
+  .fmc-login-footer {
+    padding: 15px 5%;
+    font-size: 10px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+  .fmc-login-options {
+    align-items: flex-start;
+  }
+
+  .fmc-remember,
+  .fmc-forgot-link {
+    font-size: 11px;
+  }
+
+  .fmc-glass-card {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  .fmc-login-footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .fmc-login-page *,
+  .fmc-login-page *::before,
+  .fmc-login-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Role selection */
+
+.fmc-role-selection {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 22px;
+}
+
+.fmc-role-option {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 14px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fmc-role-option:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+}
+
+.fmc-role-option-active {
+  background: rgba(37, 99, 235, 0.12);
+  border: 2px solid #2563eb;
+  color: #1d4ed8;
+}
+
+.fmc-role-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fmc-role-description {
+  font-size: 10px;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.fmc-role-option:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.fmc-role-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 420px) {
+  .fmc-role-selection {
+    gap: 6px;
+  }
+
+  .fmc-role-option {
+    padding: 11px 4px;
+  }
+
+  .fmc-role-description {
+    font-size: 9px;
+  }
+}
+/* ========================================
+   COMPACT LOGIN FORM
+======================================== */
+
+/* Smaller Student / Staff / Admin cards */
+.fmc-role-selection {
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fmc-role-option {
+  min-height: 100px;
+  padding: 10px 6px;
+  gap: 5px;
+  border-radius: 12px;
+}
+
+.fmc-role-option svg {
+  width: 21px;
+  height: 21px;
+}
+
+.fmc-role-label {
+  font-size: 13px;
+}
+
+.fmc-role-description {
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+/* Reduce heading spacing */
+.fmc-card-heading {
+  margin-bottom: 20px;
+}
+
+.fmc-card-heading h2 {
+  font-size: 29px;
+}
+
+.fmc-card-heading p {
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+/* Compact email and password fields */
+.fmc-input-group {
+  margin-bottom: 14px;
+}
+
+.fmc-input-group > label {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.fmc-input-wrapper {
+  min-height: 44px;
+  padding: 0 11px;
+  gap: 9px;
+}
+
+.fmc-input-wrapper input {
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+/* Compact remember me section */
+.fmc-login-options {
+  margin: 0 0 17px;
+}
+
+/* Compact login button */
+.fmc-submit-button {
+  min-height: 45px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+/* Reduce bottom spacing */
+.fmc-register-prompt {
+  margin-top: 18px;
+}
+
+.fmc-card-footer {
+  margin-top: 20px;
+}
+
+/* Slightly compact login card */
+.fmc-glass-card {
+  padding: 32px 30px 22px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 700px) {
+  .fmc-glass-card {
+    padding: 32px 22px 22px;
+  }
+
+  .fmc-role-option {
+    min-height: 95px;
+    padding: 9px 4px;
+  }
+
+  .fmc-role-description {
+    font-size: 9px;
+  }
+}
+/* Compact role selector */
+.fmc-role-selection {
+  gap: 5px !important;
+  padding: 3px !important;
+  margin-bottom: 12px !important;
+}
+
+.fmc-role-option {
+  min-height: 36px !important;
+  padding: 6px 4px !important;
+  border-radius: 7px !important;
+  font-size: 12px !important;
+}
+
+/* Reduce space above and below the role selector */
+.fmc-card-heading {
+  margin-bottom: 12px !important;
+}
+
+.fmc-card-heading p {
+  margin-top: 5px !important;
+}
+
+/* Reduce email and password field spacing */
+.fmc-input-group {
+  margin-bottom: 9px !important;
+}
+
+.fmc-input-group > label {
+  margin-bottom: 4px !important;
+}
+
+.fmc-input-wrapper {
+  min-height: 38px !important;
+  padding: 0 10px !important;
+}
+
+.fmc-input-wrapper input {
+  padding: 7px 0 !important;
+  font-size: 12px !important;
+}
+
+/* Compact login options and button */
+.fmc-login-options {
+  margin: 0 0 12px !important;
+}
+
+.fmc-submit-button {
+  min-height: 40px !important;
+  padding: 8px 12px !important;
+}
+
+/* Reduce bottom spacing */
+.fmc-register-prompt {
+  margin-top: 12px !important;
+}
+
+.fmc-card-footer {
+  margin-top: 12px !important;
+}
+
+/* Reduce card padding */
+.fmc-glass-card {
+  padding: 18px 22px 14px !important;
+}

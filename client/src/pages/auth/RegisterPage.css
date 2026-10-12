@@ -1,0 +1,463 @@
+/* ========================================
+  CampusFix  REGISTER PAGE
+   Same campus background + glass design
+   as LoginPage.css
+======================================== */
+
+.fmc-register-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Keep Login page's campus background and overlay.
+   Do not override background-image here. */
+
+/* Navbar */
+
+.fmc-register-page .fmc-login-navbar {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* Main content */
+
+.fmc-register-page .fmc-register-content {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 28px 0 32px;
+
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left introduction */
+
+.fmc-register-page .fmc-register-intro {
+  max-width: 510px;
+  animation: fmcRegisterIntroEnter 850ms ease both;
+}
+
+.fmc-register-page .fmc-register-intro h1 {
+  color: #fffdf5;
+}
+
+.fmc-register-page .fmc-register-intro h1 span {
+  color: #d2e0b6;
+}
+
+.fmc-register-page .fmc-register-intro p {
+  color: rgba(255, 253, 245, 0.9);
+}
+
+/* Registration glass card */
+
+.fmc-register-page .fmc-register-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 26px 28px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 23px;
+
+  background: rgba(239, 242, 228, 0.19);
+
+  box-shadow:
+    0 25px 65px rgba(4, 23, 16, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  color: #fffdf5;
+
+  animation: fmcRegisterCardEnter 900ms
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Card heading */
+
+.fmc-register-page .fmc-card-heading {
+  margin-bottom: 17px;
+  text-align: center;
+}
+
+.fmc-register-page .fmc-card-badge {
+  color: #e1ebcc;
+}
+
+.fmc-register-page .fmc-card-heading h2 {
+  color: #fffdf5;
+  font-size: 29px;
+}
+
+.fmc-register-page .fmc-card-heading p {
+  color: rgba(255, 253, 245, 0.86);
+  font-size: 12px;
+}
+
+/* Role selector */
+
+.fmc-register-role-label {
+  margin-bottom: 7px;
+  color: #fffdf5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fmc-register-role-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-bottom: 13px;
+}
+
+.fmc-register-role-switch button {
+  min-height: 39px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.13);
+  color: #fffdf5;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fmc-register-role-switch button:hover {
+  border-color: #dce7c6;
+  transform: translateY(-1px);
+}
+
+.fmc-register-role-switch button.active {
+  border-color: #dce7c6;
+  background: rgba(220, 231, 198, 0.85);
+  color: #183e2d;
+}
+
+/* Form fields */
+
+.fmc-register-page .fmc-register-input-group {
+  margin-bottom: 11px;
+}
+
+.fmc-register-page .fmc-register-input-group > label {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #fffdf5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fmc-register-page .fmc-input-wrapper {
+  min-height: 42px;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.13);
+  color: #f1f4e7;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fmc-register-page .fmc-input-wrapper:focus-within {
+  border-color: #dce7c6;
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow: 0 0 0 3px rgba(220, 231, 198, 0.12);
+}
+
+.fmc-register-page .fmc-input-wrapper > svg {
+  flex-shrink: 0;
+}
+
+.fmc-register-page .fmc-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #fffdf5;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.fmc-register-page .fmc-input-wrapper input::placeholder {
+  color: rgba(255, 253, 245, 0.72);
+}
+
+.fmc-register-page .fmc-input-wrapper select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #fffdf5;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.fmc-register-page .fmc-input-wrapper select option {
+  background: #fffdf5;
+  color: #183e2d;
+}
+
+/* Password visibility buttons */
+
+.fmc-register-page .fmc-password-toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+
+  padding: 3px;
+  border: none;
+
+  background: transparent;
+  color: #f1f4e7;
+
+  cursor: pointer;
+}
+
+/* Error message */
+
+.fmc-register-error {
+  margin: 4px 0 10px;
+  padding: 9px 11px;
+
+  border: 1px solid rgba(255, 220, 210, 0.55);
+  border-radius: 9px;
+
+  background: rgba(111, 38, 30, 0.25);
+  color: #fff0e9;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Submit button */
+
+.fmc-register-page .fmc-register-submit {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #dce7c6;
+  border-radius: 10px;
+
+  background: #dce7c6;
+  color: #183e2d;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.fmc-register-page .fmc-register-submit:hover {
+  background: #edf2e2;
+  box-shadow: 0 8px 22px rgba(4, 23, 16, 0.17);
+  transform: translateY(-2px);
+}
+
+.fmc-register-page .fmc-register-submit svg {
+  transition: transform 0.25s ease;
+}
+
+.fmc-register-page .fmc-register-submit:hover svg {
+  transform: translateX(4px);
+}
+
+/* Login prompt */
+
+.fmc-register-page .fmc-register-prompt {
+  margin-top: 16px;
+  color: rgba(255, 253, 245, 0.9);
+  text-align: center;
+  font-size: 11px;
+}
+
+.fmc-register-page .fmc-register-prompt a {
+  color: #e1ebcc;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.fmc-register-page .fmc-register-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Card footer */
+
+.fmc-register-page .fmc-card-footer {
+  margin-top: 18px;
+  color: rgba(255, 253, 245, 0.7);
+}
+
+/* Bottom footer */
+
+.fmc-register-page .fmc-login-footer {
+  flex-shrink: 0;
+}
+
+/* Animations */
+
+@keyframes fmcRegisterCardEnter {
+  from {
+    opacity: 0;
+    transform: translateX(45px) translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes fmcRegisterIntroEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .fmc-register-page .fmc-register-content {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 28px;
+  }
+
+  .fmc-register-page .fmc-register-intro h1 {
+    font-size: 39px;
+  }
+
+  .fmc-register-page .fmc-register-card {
+    padding: 24px 22px 19px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .fmc-register-page .fmc-login-navbar {
+    min-height: 70px;
+    padding: 14px 5%;
+  }
+
+  .fmc-register-page .fmc-login-nav {
+    display: none;
+  }
+
+  .fmc-register-page .fmc-register-content {
+    width: min(430px, 90%);
+    padding: 35px 0 40px;
+
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .fmc-register-page .fmc-register-intro {
+    text-align: center;
+  }
+
+  .fmc-register-page .fmc-register-intro h1 {
+    font-size: clamp(34px, 8vw, 43px);
+    letter-spacing: -1.5px;
+  }
+
+  .fmc-register-page .fmc-register-intro p {
+    margin: 15px auto 0;
+    font-size: 14px;
+  }
+
+  .fmc-register-page .fmc-register-card {
+    padding: 32px 23px 22px;
+  }
+
+  .fmc-register-page .fmc-login-footer {
+    padding: 15px 5%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .fmc-register-page .fmc-register-content {
+    width: 92%;
+  }
+
+  .fmc-register-page .fmc-register-card {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .fmc-register-page .fmc-login-footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .fmc-register-page .fmc-register-card,
+  .fmc-register-page .fmc-register-intro {
+    animation: none !important;
+  }
+}
